@@ -1,6 +1,25 @@
-# Python Elgato Stream Deck Library
+# Elgato Stream Deck with i3 wm
 
-![Example Deck](ExampleDeck.jpg)
+> Work in progress
+
+Control your i3 window manager with an [Elgato Stream Deck](https://www.elgato.com/en/gaming/stream-deck). Switch between workspaces, which are previewed directly on your stream deck. 
+Based on the [Python Elgato Stream Deck Library](https://github.com/abcminiuser/python-elgato-streamdeck)
+
+#### Dependencies
+
+* i3ipc
+* mss
+* Pillow (or any compatible fork)
+
+#### Running
+
+> Make sure you follow the Installation Guide of the Python Elgato Stream Deck Library below
+
+```bash
+./start.sh
+```
+
+####  Python Elgato Stream Deck Library
 
 This is an open source Python 3 library to control an
 [Elgato Stream Deck](https://www.elgato.com/en/gaming/stream-deck) directly,
