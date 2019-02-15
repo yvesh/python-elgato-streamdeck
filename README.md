@@ -5,6 +5,8 @@
 Control your i3 window manager with an [Elgato Stream Deck](https://www.elgato.com/en/gaming/stream-deck). Switch between workspaces, which are previewed directly on your stream deck. 
 Based on the [Python Elgato Stream Deck Library](https://github.com/abcminiuser/python-elgato-streamdeck)
 
+![Example](SampleI3.jpg)
+
 #### Dependencies
 
 * i3ipc
