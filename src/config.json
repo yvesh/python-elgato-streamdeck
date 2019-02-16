@@ -1,0 +1,17 @@
+[
+  {"key":  0, "type": "workspace", "workspace": 5, "text":  "5"},
+  {"key":  1, "type": "workspace", "workspace": 4, "text":  "4"},
+  {"key":  2, "type": "workspace", "workspace": 3, "text":  "3"},
+  {"key":  3, "type": "workspace", "workspace": 2, "text":  "2"},
+  {"key":  4, "type": "workspace", "workspace": 1, "text":  "1"},
+  {"key":  5, "type": "workspace", "workspace": 0, "text":  "0"},
+  {"key":  6, "type": "workspace", "workspace": 9, "text":  "9"},
+  {"key":  7, "type": "workspace", "workspace": 8, "text":  "8"},
+  {"key":  8, "type": "workspace", "workspace": 7, "text":  "7"},
+  {"key":  9, "type": "workspace", "workspace": 6, "text":  "6"},
+  {"key":  10, "type": "exit", "icon": "times-circle", "text":  "Exit i3"},
+  {"key":  11, "type": "reload", "icon": "redo-alt", "text":  "Reload"},
+  {"key":  12, "type": "layout", "layout": "tabbed", "icon": "random", "text":  "Tabbed"},
+  {"key":  13, "type": "layout", "layout": "stacking", "icon": "sticky-note", "text":  "Stacking"},
+  {"key":  14, "type": "layout", "layout": "toggle split", "icon": "columns", "text":  "Split"}
+]

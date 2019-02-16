@@ -10,6 +10,7 @@
 import StreamDeck.StreamDeck as StreamDeck
 import threading
 from I3.I3Helper import I3Helper
+import json
 
 
 # Creates a new key image based on the key index, style and current key state
@@ -18,11 +19,6 @@ def update_key_image(deck, key, state):
     im = i3_helper.get_key_image(key, state)
 
     deck.set_key_image(key, im)
-
-
-def handle_key_press_workspace(key, state):
-    # Switch workspace
-    i3_helper.go_to_workspace(key)
 
 
 # Prints key state change information, updates rhe key image and performs any
@@ -36,16 +32,37 @@ def key_change_callback(deck, key, state):
 
     # Check if the key is changing to the pressed state
     if state:
-        if key < 11:
-            handle_key_press_workspace(key, state)
+        key_config = i3_helper.get_key_config(key)
+
+        # Hardcoded for now
+        if key_config["type"] == "workspace":
+            # Switch workspace
+            i3_helper.go_to_workspace(key_config["workspace"])
+        elif key_config["type"] == "layout":
+            i3_helper.switch_layout(key_config)
+        elif key_config["type"] == "reload":
+            i3_helper.reload()
+        elif key_config["type"] == "exit":
+            i3_helper.exit()
+        else:
+            print("Dummy task", key_config["type"])
+
+
+def load_config():
+    with open("config.json", "r") as config_file:
+        config = json.load(config_file)
+        return config
 
 
 if __name__ == "__main__":
     manager = StreamDeck.DeviceManager()
     decks = manager.enumerate()
+    config = load_config()
+
+    print(config)
 
     # Hack, for now just working with one Deck
-    i3_helper = I3Helper(decks[0])
+    i3_helper = I3Helper(decks[0], config)
 
     print("Found {} Stream Decks.".format(len(decks)), flush=True)
 
